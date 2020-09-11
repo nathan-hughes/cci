@@ -55,6 +55,6 @@ public final class TestResult {
         Throwable t = throwable instanceof InvocationTargetException 
         ? throwable.getCause() : throwable;
 
-        return String.format("%s: %s%n%s", t.getClass().getName(), t.getMessage(), stackTraceToString(t));
+        return stackTraceToString(t);
     }
 }

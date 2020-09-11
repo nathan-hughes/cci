@@ -18,13 +18,20 @@ public interface Asserts {
 
     static void assertEq(Object actual, Object expected) {
         if (actual == null || expected == null) {
-            if (actual != expected) {
+            if (actual == expected) {
+                return;
+            }
+            else {
                 throw new AssertFailedException(actual, expected, formatAssertsOneLine(actual, expected));                
             }
         }
         if (!expected.equals(actual)) {
             throw new AssertFailedException(actual, expected, formatAssertsMultiLine(actual, expected));
         }      
+    }
+
+    static void assertNull(Object actual) {
+        assertEq(actual, null);
     }
 
     static String formatAssertsOneLine(Object actual, Object expected) {

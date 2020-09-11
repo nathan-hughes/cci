@@ -11,7 +11,7 @@ public class AssertFailedException extends RuntimeException {
         this.actual = actual;
     }
 
-    public Object getExpected() { return expected;}
+    public Object getExpected() { return expected; }
 
-    public Object getActual() { return actual;}
+    public Object getActual() { return actual; }
 }
